@@ -1,6 +1,4 @@
 package org.example;
-
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,8 +14,6 @@ public class AppUserTest {
         //When
         appUser=new AppUser("CrazyDoris", "1234");
         String username = appUser.getUsername();
-        String password = appUser.getPassword();
-
 
         //Then
         assertEquals("CrazyDoris", username);
