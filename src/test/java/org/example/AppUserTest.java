@@ -16,7 +16,6 @@ public class AppUserTest {
         //When
         appUser=new AppUser("CrazyDoris", "1234");
         String username = appUser.getUsername();
-        System.out.println(appUser.getUsername());
         String password = appUser.getPassword();
 
 
