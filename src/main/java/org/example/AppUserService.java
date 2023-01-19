@@ -8,11 +8,6 @@ public class AppUserService {
     }
 
     public boolean login(String username, String password)  {
-
-
-        if (appUser.getUsername().equals(username) && appUser.getPassword().equals(password)) {
-            return true;
-        }
-        return false;
+        return appUser.getUsername().equals(username) && appUser.getPassword().equals(password);
     }
 }
