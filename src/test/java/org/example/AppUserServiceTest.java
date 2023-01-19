@@ -10,8 +10,9 @@ public class AppUserServiceTest {
     public void loginUser_correctUsernameAndPassword_shouldLogin() {
         //Given
         AppUser appUser = new AppUser("Ankan", "1234");
+        AppUserService appUserService= new AppUserService(appUser);
         //When
-        boolean result = AppUserService.login(appUser.getUsername(), appUser.getPassword());
+        boolean result = appUserService.login(appUser.getUsername(), appUser.getPassword());
         //Then
         assertTrue(result);
 
