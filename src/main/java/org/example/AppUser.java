@@ -25,11 +25,11 @@ public class AppUser {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AppUser appUser = (AppUser) o;
-        return Objects.equals(username, appUser.username) && Objects.equals(password, appUser.password);
+        return Objects.equals(username, appUser.username);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, password);
+        return Objects.hash(username);
     }
 }

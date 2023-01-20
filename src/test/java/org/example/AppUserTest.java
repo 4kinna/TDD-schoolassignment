@@ -1,17 +1,21 @@
 package org.example;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-public class AppUserTest {
-private AppUser appUser;
 
-@BeforeEach
-public void startUp(){
-    appUser=new AppUser("Ankan", "1234");
-}
+import static org.junit.jupiter.api.Assertions.*;
+
+public class AppUserTest {
+    private AppUser appUser;
+
+    @BeforeEach
+    public void startUp() {
+        appUser = new AppUser("Ankan", "1234");
+    }
 
     @Test
-    public void compareUsername_sameUsername_returnUsername(){
+    public void compareUsername_sameUsername_returnUsername() {
         //Given
 //        appUser=new AppUser("Ankan", "1234");
 
@@ -24,15 +28,20 @@ public void startUp(){
 
     //test för att gämföra två användare,
     @Test
-    public void compareUserData_ifSameUser_returnUser(){
+    public void compareUserData_ifSameUser_returnUser() {
         //Given
 
         //When
-        String username=null;
-        String password=null;
+        String username = appUser.getUsername();
+        String password = appUser.getPassword();
 
         //Then
-        assertAll(()->assertNotNull(appUser), ()->assertEquals("Annika",username),()->assertEquals("12345",password));
+        assertAll(
+                () -> assertNotNull(appUser),
+                () -> assertEquals("Ankan", username),
+                () -> assertEquals("1234", password),
+                () -> assertEquals(new AppUser("Ankan", "1234"), appUser));
+
     }
 
 }
