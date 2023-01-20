@@ -26,7 +26,6 @@ public class AppUserTest {
         assertEquals("Ankan", username);
     }
 
-    //test för att gämföra två användare,
     @Test
     public void compareUserData_ifSameUser_returnUser() {
         //Given

@@ -1,13 +1,15 @@
 package org.example;
 
 public class AppUserService {
-    private AppUser appUser;
+    private Database database;
 
-    public AppUserService(AppUser appUser) {
-        this.appUser=appUser;
+    public AppUserService(Database database) {
+       this.database=database;
     }
 
     public boolean login(String username, String password)  {
-        return appUser.getUsername().equals(username) && appUser.getPassword().equals(password);
+
+        return false;
+        //appUser.getUsername().equals(username) && appUser.getPassword().equals(password);
     }
 }
