@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 public class AppUserService {
     private Database database;
 
@@ -8,8 +10,12 @@ public class AppUserService {
     }
 
     public boolean login(String username, String password)  {
+        AppUser requesterAppUser=  database.getUserByUsername(username);
 
-        return false;
-        //appUser.getUsername().equals(username) && appUser.getPassword().equals(password);
+        if(!Objects.equals(requesterAppUser.getPassword(), password) || !Objects.equals(requesterAppUser.getUsername(), username)){
+           return false;
+        }
+
+        return Objects.equals(requesterAppUser.getPassword(), password);
     }
 }

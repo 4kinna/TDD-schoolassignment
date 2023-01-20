@@ -4,6 +4,6 @@ public interface Database {
 
     public void createUser(AppUser appUser);
 
-    public void getUserByUsername(String username);
+    public AppUser getUserByUsername(String username);
 
 }
