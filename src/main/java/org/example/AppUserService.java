@@ -13,7 +13,7 @@ public class AppUserService {
         AppUser requesterAppUser=  database.getUserByUsername(username);
 
         if(!Objects.equals(requesterAppUser.getPassword(), password) || !Objects.equals(requesterAppUser.getUsername(), username)){
-           return false;
+            throw new IllegalArgumentException("Either username or password was wrong");
         }
 
         return Objects.equals(requesterAppUser.getPassword(), password);
